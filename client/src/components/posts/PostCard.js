@@ -6,13 +6,19 @@ import moment from 'moment';
 const PostCard = (props) => {
     const [postToEdit, setPostToEdit] = useState(null);
     const {updateState, defaultFormData, ...rest} = props;
+    const updatePostToEdit = (data) => {
+        if (data[0] && data[0].id) {
+            updateState(data[0]);
+        }
+        setPostToEdit(null);
+    }
     return(
         <div className="post-wrapper">
             {postToEdit && 
                 <Form 
-                    updateState={updateState} 
+                    updateState={updatePostToEdit} 
                     defaultState={postToEdit}
-                    from="edit" />
+                    from="post" />
             }
             {!postToEdit &&
                 <PostContent {...rest} setPostToEdit={setPostToEdit} />

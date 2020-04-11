@@ -15,17 +15,20 @@ const Comments = ({postId}) => {
     }, [postId]);
 
     const updateState = (data) => {
-
+        setComments([
+            ...comments,
+            data[0]
+        ])
     }
 
     return(
         <div className="comments">
             <Form 
                 updateState={updateState} 
-                defaultState={{contents: ""}}
+                defaultState={{title: ""}}
                 from="comments" />
             <h2 className="comments-title">Comments</h2>
-            {comments.map(comment => <Comment key={comment.id} {...comment} />)}
+            {comments.map((comment, index) => <Comment key={index} {...comment} />)}
         </div>
     )
 }

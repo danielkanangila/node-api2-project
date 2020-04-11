@@ -54,7 +54,11 @@ export const Main = styled.div`
         }
     }
     textarea {
-        height: 90px;
+        resize: none;
+        overflow: auto;
+        min-height: 90px;
+        max-height: 250px;
+        padding-bottom: 20px;
     }
     .btn {
         text-transform: uppercase;
@@ -109,10 +113,16 @@ export const Main = styled.div`
             background: rgba(229, 57, 53, 0.3);
         }
     }
+    h2 {
+        font-size: 1.1rem;
+    }
     .post, .comment {
         position: relative;
         padding: 30px 0;
         border-bottom: 2px solid #f1f1f1;
+        &-title {
+            font-size: 1.1rem;
+        }
         &-contents {
             margin: 15px 0;
         }
