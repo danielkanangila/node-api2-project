@@ -3,15 +3,21 @@
   "version": "0.0.1",
   "description": "Project for Node API 2 Module",
   "private": true,
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon --exec babel-node server.js"
   },
   "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "knex": "^0.20.11",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.3"
   }
 }
